@@ -1,16 +1,12 @@
 <template>
 <div class="main">
   <div class="right">
-    <span class="days">
-    <h1 v-show="!show" @click="show=!show">forecasts for 5 day</h1>
-    <h1 v-show="show" @click="show=!show">forecasts for 16 day</h1>
-    </span>
     <h1>Today's weather</h1>
     <h1 class="time">{{date}}</h1>
     <vladimir3hr class="city"/>
     </div>
     <div class="left">
-    <vladimir5day v-show="show" class="city"/>
+    <vladimir5day class="city"/>
     </div>
   </div>
   </template>
@@ -44,17 +40,6 @@ export default {
 }
 </script>
 <style scoped>
-.days h1{
- border-top: 1px solid black;
- border-bottom: 1px solid black;
- margin-bottom: 20px;
- margin-top: -20px;
- cursor: pointer
-}
-.days h1:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border: 1px solid black;
-}
 h3 {
   padding: 5px;
 }

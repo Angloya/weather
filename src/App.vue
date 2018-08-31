@@ -21,7 +21,7 @@
   background-size: cover;
   height: 100%;
   margin: 0;
-  padding: 10px;
+  padding: 0px;
 }
 *{
   margin: 0;

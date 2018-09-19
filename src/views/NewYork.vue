@@ -84,6 +84,7 @@ h3 {
   width: 100%;
   padding: 5px;
   border-right: none;
+  position:static;
   border-bottom: 1px solid black
 }
 .left{

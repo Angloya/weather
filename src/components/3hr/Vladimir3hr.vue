@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     getWeather () {
-      this.$http.get('http://api.openweathermap.org/data/2.5/weather?id=473247&units=metric&APPID=35fa185aca1299bde6616c1df7e8a4b8').then(response => {
+      this.$http.get('https://api.openweathermap.org/data/2.5/weather?id=473247&units=metric&APPID=35fa185aca1299bde6616c1df7e8a4b8').then(response => {
         this.weatherData = response.body
         this.weatherData.country = response.body.sys.country
         this.weather = response.body.weather
@@ -41,7 +41,7 @@ export default {
         this.weatherData.humidity = this.weatherData.main.humidity
         this.weatherData.clouds = response.body.clouds.all
         this.weatherData.temp = Math.round(this.weatherData.main.temp)
-        this.img = 'http://openweathermap.org/img/w/' + this.weather[0].icon + '.png'
+        this.img = 'https://openweathermap.org/img/w/' + this.weather[0].icon + '.png'
         this.weatherData.description = this.weather[0].description
         this.weatherData.wind = response.body.wind.speed
         var sunriseTime = new Date(response.body.sys.sunrise * 1000)

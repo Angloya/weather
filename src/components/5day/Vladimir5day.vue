@@ -5,7 +5,7 @@
      <li v-for="(item,index) in weatherDay" :key="index" class="day">
          <p>{{isDate(item.dt)}}</p>
          <p>{{isTime(item.dt)}} </p>
-         <img :src='"http://openweathermap.org/img/w/" + item.weather[0].icon + ".png"' :alt='item.weather[0].description'>
+         <img :src='"https://openweathermap.org/img/w/" + item.weather[0].icon + ".png"' :alt='item.weather[0].description'>
          <h2>{{isRound(item.main.temp)}}°C</h2>
      </li>
  </ul>
@@ -15,7 +15,7 @@
          <h2>{{isTime(day.dt)}}</h2>
          <ul>
         <li>
-            <img :src='"http://openweathermap.org/img/w/" + day.weather[0].icon + ".png"' :alt='day.weather[0].description'>
+            <img :src='"https://openweathermap.org/img/w/" + day.weather[0].icon + ".png"' :alt='day.weather[0].description'>
             <h2>{{day.weather[0].description}}</h2>
             <h1>{{isRound(day.main.temp)}}°C</h1>
             <div class='weather5'>
@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     getWeather () {
-      this.$http.get('http://api.openweathermap.org/data/2.5/forecast?id=473247&units=metric&APPID=35fa185aca1299bde6616c1df7e8a4b8').then(response => {
+      this.$http.get('https://api.openweathermap.org/data/2.5/forecast?id=473247&units=metric&APPID=35fa185aca1299bde6616c1df7e8a4b8').then(response => {
         this.weatherData = response.body
         this.weatherData.list = response.body.list
         this.weatherData.name = this.weatherData.city.name
